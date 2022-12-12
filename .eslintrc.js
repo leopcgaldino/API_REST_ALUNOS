@@ -11,7 +11,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "no-console": "off",
-    "import/first": "off"
+    'no-console': 'off',
+    'import/first': 'off',
+    'spaced-comment': 'off',
+    'object-shorthand': 'off',
   },
 };
