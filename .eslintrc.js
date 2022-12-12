@@ -15,5 +15,10 @@ module.exports = {
     'import/first': 'off',
     'spaced-comment': 'off',
     'object-shorthand': 'off',
+    'class-methods-use-this': 'off',
+    'consistent-return': 'off',
+    'no-undef': 'off',
+    'camelcase': 'off',
+    'no-unused-vars': 'off',
   },
 };

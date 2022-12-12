@@ -1,18 +1,17 @@
-import multer from "multer";
-import multerConfig from "../config/multerConfig";
+import multer from 'multer';
+import multerConfig from '../config/multerConfig';
 
-import Foto from "../models/Foto";
+import Foto from '../models/Foto';
 
-const upload = multer(multerConfig).single('foto')
-
+const upload = multer(multerConfig).single('foto');
 
 class FotoController {
   store(req, res) {
     return upload(req, res, async (error) => {
-      if(error){
+      if (error) {
         return res.status(400).json({
           errors: [error.code],
-        })
+        });
       }
 
       try {
@@ -20,14 +19,13 @@ class FotoController {
         const { aluno_id } = req.body;
         const foto = await Foto.create({ originalname, filename, aluno_id });
 
-        return res.json(foto)
-      } catch (error) {
+        return res.json(foto);
+      } catch (e) {
         return res.status(400).json({
           errors: ['Aluno não existe'],
-        })
+        });
       }
-
-    })
+    });
   }
 }
 

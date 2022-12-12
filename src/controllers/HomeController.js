@@ -1,7 +1,7 @@
 import Aluno from '../models/Aluno';
 
 class HomeController {
- async index(req, res) {
+  async index(req, res) {
     res.json('tudo certo');
   }
 }
