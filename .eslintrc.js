@@ -18,7 +18,8 @@ module.exports = {
     'class-methods-use-this': 'off',
     'consistent-return': 'off',
     'no-undef': 'off',
-    'camelcase': 'off',
+    camelcase: 'off',
     'no-unused-vars': 'off',
+    'no-param-reassign': 'off',
   },
 };

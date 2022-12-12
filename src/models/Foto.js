@@ -1,4 +1,4 @@
-import Sequelize, { Model} from 'sequelize';
+import Sequelize, { Model } from 'sequelize';
 import appConfig from '../config/appConfig';
 
 export default class Foto extends Model {
@@ -10,7 +10,7 @@ export default class Foto extends Model {
         validate: {
           notEmpty: {
             msg: 'Campo nao pode ficar vazio',
-          }
+          },
         },
       },
       filename: {
@@ -19,7 +19,7 @@ export default class Foto extends Model {
         validate: {
           notEmpty: {
             msg: 'Campo nao pode ficar vazio',
-          }
+          },
         },
       },
       url: {
@@ -27,11 +27,11 @@ export default class Foto extends Model {
         get() {
           return `${appConfig.url}/images/${this.getDataValue('filename')}`;
         },
-      }
+      },
     }, {
       sequelize,
       tablename: 'fotos',
-    })
+    });
     return this;
   }
 

@@ -1,15 +1,14 @@
-import jwt from 'jsonwebtoken'
-import User from '../models/User'
+import jwt from 'jsonwebtoken';
+import User from '../models/User';
+
 export default async (req, res, next) => {
   const { authorization } = req.headers;
 
-  if(!authorization){
+  if (!authorization) {
     return res.status(401).json({
       errors: ['Login Required'],
     });
   }
-  //divide token
-      //bearer //token
   const [texto, token] = authorization.split(' ');
 
   try {
@@ -20,11 +19,10 @@ export default async (req, res, next) => {
       where: {
         id,
         email,
-      }
-    })
+      },
+    });
 
-
-    if(!user){
+    if (!user) {
       return res.status(401).json({
         errors: ['Usuário inválido'],
       });

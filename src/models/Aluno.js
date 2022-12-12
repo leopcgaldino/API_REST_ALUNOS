@@ -1,4 +1,4 @@
-import Sequelize, { Model} from 'sequelize';
+import Sequelize, { Model } from 'sequelize';
 
 export default class Aluno extends Model {
   static init(sequelize) {
@@ -10,7 +10,7 @@ export default class Aluno extends Model {
           len: {
             args: [3, 255],
             msg: 'Nome precisa ter entre 3 e 255 caracteres',
-          }
+          },
         },
       },
       sobrenome: {
@@ -20,19 +20,19 @@ export default class Aluno extends Model {
           len: {
             args: [3, 255],
             msg: 'Sobrenome precisa ter entre 3 e 255 caracteres',
-          }
+          },
         },
       },
       email: {
         type: Sequelize.STRING,
         defaultValue: '',
         unique: {
-          msg: 'E-mail já existe'
+          msg: 'E-mail já existe',
         },
         validate: {
           isEmail: {
             msg: 'Email inválido',
-          }
+          },
         },
       },
       idade: {
@@ -41,16 +41,16 @@ export default class Aluno extends Model {
         validate: {
           isInt: {
             msg: 'Idade precisa ser um número inteiro',
-          }
+          },
         },
       },
-      peso:{
+      peso: {
         type: Sequelize.FLOAT,
         defaultValue: '',
         validate: {
           isFloat: {
             msg: 'Peso precisa ser numero inteiro ou de ponto flutuante',
-          }
+          },
         },
       },
       altura: {
@@ -59,12 +59,12 @@ export default class Aluno extends Model {
         validate: {
           isFloat: {
             msg: 'Altura precisa ser numero inteiro ou de ponto flutuante',
-          }
+          },
         },
       },
     }, {
       sequelize,
-    })
+    });
     return this;
   }
 

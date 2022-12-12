@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import dotenv from 'dotenv';
 import { resolve } from 'path';
 
