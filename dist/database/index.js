@@ -6,7 +6,6 @@ var _Foto = require('../models/Foto'); var _Foto2 = _interopRequireDefault(_Foto
 
 const models = [_Aluno2.default, _User2.default, _Foto2.default];
 
-const connection = new (0, _sequelize2.default)(_database2.default)
+const connection = new (0, _sequelize2.default)(_database2.default);
 models.forEach((model) => model.init(connection));
 models.forEach((model) => model.associate && model.associate(connection.models));
-

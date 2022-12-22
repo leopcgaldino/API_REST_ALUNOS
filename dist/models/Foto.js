@@ -10,7 +10,7 @@ var _appConfig = require('../config/appConfig'); var _appConfig2 = _interopRequi
         validate: {
           notEmpty: {
             msg: 'Campo nao pode ficar vazio',
-          }
+          },
         },
       },
       filename: {
@@ -19,7 +19,7 @@ var _appConfig = require('../config/appConfig'); var _appConfig2 = _interopRequi
         validate: {
           notEmpty: {
             msg: 'Campo nao pode ficar vazio',
-          }
+          },
         },
       },
       url: {
@@ -27,11 +27,11 @@ var _appConfig = require('../config/appConfig'); var _appConfig2 = _interopRequi
         get() {
           return `${_appConfig2.default.url}/images/${this.getDataValue('filename')}`;
         },
-      }
+      },
     }, {
       sequelize,
       tablename: 'fotos',
-    })
+    });
     return this;
   }
 

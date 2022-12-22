@@ -1,15 +1,14 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _jsonwebtoken = require('jsonwebtoken'); var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
 var _User = require('../models/User'); var _User2 = _interopRequireDefault(_User);
+
 exports. default = async (req, res, next) => {
   const { authorization } = req.headers;
 
-  if(!authorization){
+  if (!authorization) {
     return res.status(401).json({
       errors: ['Login Required'],
     });
   }
-  //divide token
-      //bearer //token
   const [texto, token] = authorization.split(' ');
 
   try {
@@ -20,11 +19,10 @@ exports. default = async (req, res, next) => {
       where: {
         id,
         email,
-      }
-    })
+      },
+    });
 
-
-    if(!user){
+    if (!user) {
       return res.status(401).json({
         errors: ['Usuário inválido'],
       });

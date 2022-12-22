@@ -1,7 +1,7 @@
-import { Router } from "express";
-import alunoController from '../controllers/AlunoController'
+import { Router } from 'express';
+import alunoController from '../controllers/AlunoController';
 
-import loginRequired from "../middlewares/loginRequired";
+import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 

@@ -10,7 +10,7 @@
           len: {
             args: [3, 255],
             msg: 'Nome precisa ter entre 3 e 255 caracteres',
-          }
+          },
         },
       },
       sobrenome: {
@@ -20,19 +20,19 @@
           len: {
             args: [3, 255],
             msg: 'Sobrenome precisa ter entre 3 e 255 caracteres',
-          }
+          },
         },
       },
       email: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
         unique: {
-          msg: 'E-mail já existe'
+          msg: 'E-mail já existe',
         },
         validate: {
           isEmail: {
             msg: 'Email inválido',
-          }
+          },
         },
       },
       idade: {
@@ -41,16 +41,16 @@
         validate: {
           isInt: {
             msg: 'Idade precisa ser um número inteiro',
-          }
+          },
         },
       },
-      peso:{
+      peso: {
         type: _sequelize2.default.FLOAT,
         defaultValue: '',
         validate: {
           isFloat: {
             msg: 'Peso precisa ser numero inteiro ou de ponto flutuante',
-          }
+          },
         },
       },
       altura: {
@@ -59,12 +59,12 @@
         validate: {
           isFloat: {
             msg: 'Altura precisa ser numero inteiro ou de ponto flutuante',
-          }
+          },
         },
       },
     }, {
       sequelize,
-    })
+    });
     return this;
   }
 
